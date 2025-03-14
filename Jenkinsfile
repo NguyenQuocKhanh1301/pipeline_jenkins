@@ -1,7 +1,7 @@
 pipeline {
     agent { 
         node {
-            label 'test_cloud_agent'
+            label 'docker-agent-python'
             }
       }
     triggers {
