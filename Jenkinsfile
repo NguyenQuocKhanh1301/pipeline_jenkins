@@ -22,8 +22,6 @@ pipeline {
                 sh '''
                 cd dockerweb
                 python3 app.py
-                cd hello-docker
-                python3 main.py
                 '''
             }
         }
