@@ -1,3 +1,2 @@
 fastapi
 typing
-numpy
