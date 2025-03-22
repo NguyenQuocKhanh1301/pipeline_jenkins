@@ -29,13 +29,6 @@ pipeline {
                 '''
             }
         }
-        stage('check out'){
-            steps {
-                echo "checkout sucess"
-                sh '''
-                echo "check out git..."
-                '''
-            }    
-        }
+        
     }
 }
