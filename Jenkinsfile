@@ -16,8 +16,8 @@ pipeline {
             steps {
                 echo "Testing.."
                 sh '''
-                cd hello-docker
-                python3 main.py
+                cd dockerweb
+                python3 app.py
                 '''
             }
         }
