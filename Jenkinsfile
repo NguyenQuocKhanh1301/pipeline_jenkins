@@ -1,9 +1,5 @@
 pipeline {
-    agent { 
-        node {
-        label 'docker-agent-python'
-            }
-      }
+    agent any
     triggers {
         pollSCM '* * * * *'
     }
@@ -20,8 +16,8 @@ pipeline {
             steps {
                 echo "Testing.."
                 sh '''
-                cd dockerweb
-                python3 app.py
+                cd hello-docker
+                python3 main.py
                 '''
             }
         }
@@ -32,6 +28,14 @@ pipeline {
                 echo "doing delivery stuff.."
                 '''
             }
+        }
+        stage('check out'){
+            step{
+                echo "checkout sucess"
+                sh '''
+                echo "check out git..."
+                '''
+            }    
         }
     }
 }
