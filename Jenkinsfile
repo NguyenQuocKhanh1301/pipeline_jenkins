@@ -30,7 +30,7 @@ pipeline {
             }
         }
         stage('check out'){
-            step{
+            steps {
                 echo "checkout sucess"
                 sh '''
                 echo "check out git..."
