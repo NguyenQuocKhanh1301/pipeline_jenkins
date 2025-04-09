@@ -17,7 +17,7 @@ pipeline {
                 echo "Testing.."
                 sh '''
                 cd dockerweb
-                python3 app.py
+                python3 web.py
                 '''
             }
         }
