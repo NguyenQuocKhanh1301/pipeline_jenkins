@@ -17,7 +17,7 @@ pipeline {
                 echo "Testing.."
                 sh '''
                 cd dockerweb
-                nohup uvicorn main:app --host 0.0.0.0 --port 8000 > uvicorn.log 2>&1 & echo $! > uvicorn.pid
+                nohup uvicorn web:app --host 0.0.0.0 --port 8000 > uvicorn.log 2>&1 & echo $! > uvicorn.pid
                 '''
             }
         }
