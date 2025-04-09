@@ -17,7 +17,7 @@ pipeline {
                 echo "Testing.."
                 sh '''
                 cd dockerweb
-                python3 web.py
+                uvicorn web:app --host 0.0.0.0 --port 80 --reload
                 '''
             }
         }
