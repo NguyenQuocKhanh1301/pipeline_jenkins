@@ -4,6 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
+    html_content = '''
     <!DOCTYPE html>
     <html lang="vi">
     <head>
