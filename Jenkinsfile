@@ -22,7 +22,6 @@ pipeline {
                 sh 'nohup venv/bin/python ./jenkins/webdemo.py &'
                 // Thêm delay để cho phép ứng dụng khởi động
                 sh 'sleep 6'
-                sh 'ps aux | grep python3'
             }
         }
         stage('Test Application') {
