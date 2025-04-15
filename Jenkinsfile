@@ -1,34 +1,43 @@
 pipeline {
-    agent any
-    triggers {
-        pollSCM '* * * * *'
+    agent {
+        node{
+        label 'docker-agent-python'
+        }
     }
+
+    environment {
+        // Đường dẫn tới virtual environment
+        VENV = "venv"
+    }
+    
     stages {
-        stage('Build') {
+        stage('Setup Environment') {
             steps {
-                echo "Building.."
-                sh '''
-                pip install --break-system-packages -r requirements.txt
-                '''
+                // Tạo virtual environment và cài đặt Flask
+                sh 'python -m venv venv'
+                // sh 'venv/bin/pip install flask'
+                sh 'venv/bin/pip install -r requirements.txt'
             }
         }
-        stage('Test') {
+        stage('Run Application') {
             steps {
-                echo "Testing.."
-                sh '''
-                cd dockerweb
-                nohup uvicorn web:app --host 0.0.0.0 --port 8000 > uvicorn.log 2>&1 & echo $! > uvicorn.pid
-                '''
+                sh 'nohup venv/bin/python ./jenkins/webdemo.py &'
+                // Thêm delay để cho phép ứng dụng khởi động
+                sh 'sleep 5'
             }
         }
-        stage('Deliver') {
+        stage('Test Application') {
             steps {
-                echo 'Deliver....'
-                sh '''
-                echo "doing delivery stuff.."
-                '''
+                // Gửi yêu cầu HTTP và kiểm tra kết quả trả về có chứa "i love you"
+                sh 'curl -s http://locallhost:5004 | grep "i love you"'
             }
         }
-        
+    }
+    
+    post {
+        always {
+            // Cleanup: Dừng các tiến trình Flask (nếu cần). Cách này rất đơn giản, bạn có thể cải tiến theo nhu cầu.
+            sh "pkill -f 'python ./jenkins/webdemo.py' || true"
+        }
     }
 }
