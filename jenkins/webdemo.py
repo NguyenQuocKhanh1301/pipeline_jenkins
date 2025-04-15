@@ -10,8 +10,19 @@ def index():
         <meta charset="UTF-8">
         <title>I Love You</title>
         <style>
-            h1 {
+            body {
+                margin: 0;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #f0f0f0;
+            }
+            .text {
+                font-size: 72px;
                 color: red;
+                font-family: Arial, sans-serif;
+                font-weight: bold;
             }
         </style>
     </head>
