@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Setup Environment') {
             steps {
-               
+               // cài đặt môi trường ảo
                 sh 'python3 -m venv venv'
                 sh 'venv/bin/pip install -r requirements.txt'
             }
