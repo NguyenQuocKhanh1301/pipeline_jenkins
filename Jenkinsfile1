@@ -16,7 +16,7 @@ pipeline {
                 sh '''
                 cd hello-docker
                 python main.py
-                ```
+                '''
             }
         }
         stage('Deliver') {
