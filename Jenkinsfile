@@ -14,7 +14,7 @@ pipeline {
         stage('Setup Environment') {
             steps {
                 // Tạo virtual environment và cài đặt Flask
-                sh 'python -m venv venv'
+                sh 'python3 -m venv venv'
                 // sh 'venv/bin/pip install flask'
                 sh 'venv/bin/pip install -r requirements.txt'
             }
