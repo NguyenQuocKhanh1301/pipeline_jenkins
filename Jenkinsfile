@@ -29,7 +29,7 @@ pipeline {
         stage('Test Application') {
             steps {
                 // Gửi yêu cầu HTTP và kiểm tra kết quả trả về có chứa "i love you"
-                sh 'curl -s http://locallhost:5004 | grep "i love you"'
+                sh 'curl -s http://127.0.0.1:5004 | grep "i love you"'
             }
         }
     }
