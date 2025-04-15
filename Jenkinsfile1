@@ -8,18 +8,16 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building.."
-                sh '''
-                pip install --break-system-packages -r requirements.txt
-                '''
+                   
             }
         }
         stage('Test') {
             steps {
                 echo "Testing.."
                 sh '''
-                cd dockerweb
-                nohup uvicorn web:app --host 0.0.0.0 --port 8000 > uvicorn.log 2>&1 & echo $! > uvicorn.pid
-                '''
+                cd hello-docker
+                python main.py
+                ```
             }
         }
         stage('Deliver') {
