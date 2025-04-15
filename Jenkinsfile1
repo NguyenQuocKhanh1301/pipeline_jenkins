@@ -15,7 +15,7 @@ pipeline {
                 echo "Testing.."
                 sh '''
                 cd hello-docker
-                python main.py
+                python3 main.py
                 '''
             }
         }
