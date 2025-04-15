@@ -37,7 +37,7 @@ pipeline {
     post {
         always {
             // Cleanup: Dừng các tiến trình Flask (nếu cần). Cách này rất đơn giản, bạn có thể cải tiến theo nhu cầu.
-            sh "pkill -f 'python ./jenkins/webdemo.py' || true"
+            sh "pkill -f 'python3 ./jenkins/webdemo.py' || true"
         }
     }
 }
