@@ -1,13 +1,15 @@
-from fastapi import FastAPI
-from fastapi.responses import HTMLResponse
+from flask import Flask, render_template_string
 
-app = FastAPI()
+app = Flask(__name__)
 
-html_content = """
-<!DOCTYPE html>
-<html>
+@app.route('/')
+def index():
+    html_content = '''
+    <!DOCTYPE html>
+    <html lang="vi">
     <head>
-        <title>MLOPs Demo</title>
+        <meta charset="UTF-8">
+        <title>I Love You</title>
         <style>
             body {
                 margin: 0;
@@ -26,11 +28,11 @@ html_content = """
         </style>
     </head>
     <body>
-        <div class="text">MLOPs</div>
+        <h1>i love you</h1>
     </body>
-</html>
-"""
+    </html>
+    '''
+    return render_template_string(html_content)
 
-@app.get("/", response_class=HTMLResponse)
-async def read_root():
-    return html_content
+if __name__ == '__main__':
+    app.run(debug=True)
