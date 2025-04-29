@@ -1,3 +1,5 @@
+numpy
 fastapi
 typing
-numpy
+uvicorn
+flask
