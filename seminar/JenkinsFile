@@ -12,9 +12,8 @@ pipeline {
       cd seminar
       '''
         script {
-    
-          
-            docker_image = docker.build("${DOCKER_IMAGE}", "./seminar")
+        dir('seminar')
+          docker_image = docker.build("${DOCKER_IMAGE}", '.' )
           
         }
       }
