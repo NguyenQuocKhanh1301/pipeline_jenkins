@@ -10,12 +10,8 @@ pipeline {
       steps {
         
         script {
-        dir('seminar'){
-          sh'''
-          ls
-          '''
-          docker_image = docker.build("${DOCKER_IMAGE}", "/var/jenkins_home/workspace/webapp/seminar" )
-          }
+          docker_image = docker.build("${DOCKER_IMAGE}", "." )
+          
         }
       }
     }
