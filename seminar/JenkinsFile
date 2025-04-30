@@ -14,7 +14,7 @@ pipeline {
           sh'''
           ls
           '''
-          docker_image = docker.build("${DOCKER_IMAGE}", '.' )
+          docker_image = docker.build("${DOCKER_IMAGE}", "/var/jenkins_home/workspace/webapp/seminar" )
           }
         }
       }
