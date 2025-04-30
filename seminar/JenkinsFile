@@ -8,10 +8,13 @@ pipeline {
   stages {
     stage('Build Docker Image') {
       steps {
+      sh'''
+      cd seminar
+      '''
         script {
     
           
-            docker_image = docker.build("${DOCKER_IMAGE}", "seminar")
+            docker_image = docker.build("${DOCKER_IMAGE}", ".")
           
         }
       }
