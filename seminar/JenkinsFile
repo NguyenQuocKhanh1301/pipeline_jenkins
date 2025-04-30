@@ -10,9 +10,9 @@ pipeline {
       steps {
         script {
     
-          dir('seminar') {
-            docker_image = docker.build("${DOCKER_IMAGE}", "..")
-          }
+          
+            docker_image = docker.build("${DOCKER_IMAGE}", "seminar")
+          
         }
       }
     }
