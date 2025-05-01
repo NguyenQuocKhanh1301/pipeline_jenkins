@@ -38,7 +38,7 @@ pipeline {
               docker rm app_container || true &&
               docker rmi ${DOCKER_IMAGE} || true &&
               docker pull ${DOCKER_IMAGE} &&
-              docker run -d --name app_container -p 4001:4001 ${DOCKER_IMAGE}
+              docker run -d --name app_container -p 8085:8080 ${DOCKER_IMAGE}
             '
           """
          }
