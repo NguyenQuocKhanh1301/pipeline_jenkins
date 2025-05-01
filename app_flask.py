@@ -19,7 +19,7 @@ def index():
                 align-items: center;
                 background-color: #f0f0f0;
             }
-            .text {
+            #text {
                 font-size: 72px;
                 color: red;
                 font-family: Arial, sans-serif;
@@ -28,7 +28,7 @@ def index():
         </style>
     </head>
     <body>
-        <h1>Linh đẹp trai vcl</h1>
+        <h1 class = text >Linh đẹp trai vcl</h1>
     </body>
     </html>
     '''
