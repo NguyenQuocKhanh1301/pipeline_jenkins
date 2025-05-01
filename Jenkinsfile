@@ -1,5 +1,9 @@
 pipeline {
-  agent any
+  agent {
+  node{
+        label 'docker-agent-python'
+        }
+  }
   environment {
     DOCKER_IMAGE = 'khanhnq1301/seminar:latest'
     DEPLOY_USER = 'mlops'
