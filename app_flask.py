@@ -28,7 +28,7 @@ def index():
         </style>
     </head>
     <body>
-        <h1>i love you</h1>
+        <h1>Linh đẹp trai vcl</h1>
     </body>
     </html>
     '''
