@@ -15,4 +15,4 @@ COPY app_flask.py .
 EXPOSE 5000
 
 # Command to run the app
-CMD ["python", "app_flash.py"]
+CMD ["python3", "app_flash.py"]
