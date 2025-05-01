@@ -30,7 +30,9 @@ pipeline {
 
     stage('Deploy') {
       steps {
-          sh """
+        script{
+         sshagent(['deploy-key']){
+         sh """
             ssh -o StrictHostKeyChecking=no ${DEPLOY_USER}@${DEPLOY_HOST} '
               docker pull ${DOCKER_IMAGE} &&
               docker stop app_container || true &&
@@ -38,6 +40,8 @@ pipeline {
               docker run -d --name app_container -p 4001:4001 ${DOCKER_IMAGE}
             '
           """
+         }
+        }
       }
     }
   }
