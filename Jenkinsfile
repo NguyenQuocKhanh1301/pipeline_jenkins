@@ -33,7 +33,7 @@ pipeline {
         script{
          sshagent(['deploy-key']){
          sh """
-            ssh -o StrictHostKeyChecking=no ${DEPLOY_USER}@${DEPLOY_HOST} ' << EOF
+            ssh -o StrictHostKeyChecking=no ${DEPLOY_USER}@${DEPLOY_HOST} ' 
               docker stop app_container || true &&
               docker rm app_container || true &&
               docker rmi ${DOCKER_IMAGE} || true &&
