@@ -46,14 +46,14 @@ pipeline {
     }
   }
 
-  // post {
-  //   failure {
-  //     emailext(
-  //       subject: "❌ FAILED: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-  //       body: """<p>❌ Job <b>${env.JOB_NAME}</b> build #${env.BUILD_NUMBER} failed.</p>
-  //                <p><a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>""",
-  //       to: 'khanh2003dakdoa@gmail.com'
-  //     )
-  //   }
-  // }
+  post {
+    failure {
+      emailext(
+        subject: "❌ FAILED: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+        body: """<p>❌ Job <b>${env.JOB_NAME}</b> build #${env.BUILD_NUMBER} failed.</p>
+                 <p><a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>""",
+        to: 'khanh2003dakdoa@gmail.com'
+      )
+    }
+  }
 }
