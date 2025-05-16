@@ -30,7 +30,7 @@ pipeline {
     stage('Deploy') {
       steps {
         script {
-          sshagent(['deploy-key1']) {
+          sshagent(['deploy-key']) {
             sh """
               ssh -o StrictHostKeyChecking=no ${DEPLOY_USER}@${DEPLOY_HOST} '
                 docker stop app_container || true &&
