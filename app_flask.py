@@ -28,7 +28,7 @@ def index():
         </style>
     </head>
     <body>
-        <h1 class = text >Xin chào các bạn!</h1>
+        <h1 class = text >Hello World!</h1>
     </body>
     </html>
     '''
