@@ -4,7 +4,7 @@ pipeline {
   environment {
     DOCKER_IMAGE = 'khanhnq1301/seminar:latest'
     DEPLOY_USER = 'mlops'
-    DEPLOY_HOST = '192.168.28.39'
+    DEPLOY_HOST = '192.168.28.38'
   }
 
   stages {
